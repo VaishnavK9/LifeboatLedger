@@ -1,0 +1,9 @@
+step,column,action,rationale,values_affected
+Duplicates,all,Checked rows and PassengerId across train + test; none found,Duplicates would double-count passengers and bias survival rates,0
+Missing values,Embarked,Filled 2 missing with mode 'S',Only 2 rows; 72% boarded at S and records show these two did too,2
+Missing values,Fare,Filled 1 missing with Pclass median (3rd class = £8.05),Fare is driven by class; the overall mean (£32) is skewed by luxury tickets,1
+Missing values,Age,Filled 263 missing with Title × Pclass median; added AgeImputed flag,Title and class predict age (e.g. Master = boys); a global median would flatten 20% of rows to 28,263
+Missing values,Cabin,"Created HasCabin flag + Deck letter ('U' = unknown, incl. single deck-T); dropped raw Cabin","77% missing: too sparse to impute, but presence and deck letter carry signal",1014
+Outliers,Fare,Kept 116 IQR outliers (> £65.63); added LogFare and FareZero flag,Real luxury tickets: capping would erase the class signal; log1p handles skew,0
+Outliers,Age,Kept 11 IQR outliers (> 64.81 yrs),"Ages 65–80 are plausible, not data errors",0
+Dtypes,"Pclass, Sex, Embarked, Deck, flags",Pclass → ordered category; Sex/Embarked/Deck → category; flags → int8,Correct types make category order explicit and prevent arithmetic on labels,0
