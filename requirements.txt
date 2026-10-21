@@ -6,6 +6,10 @@ seaborn==0.13.2
 scipy==1.18.1
 scikit-learn==1.9.1
 
+# Interactive dashboard (app.py)
+streamlit==1.66.0
+altair==6.3.0
+
 # Notebook tooling
 jupyter==1.1.1
 notebook==7.6.3

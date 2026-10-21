@@ -13,6 +13,7 @@ env/
 .ipynb_checkpoints/
 
 # OS / editor
+.claude/
 .DS_Store
 .idea/
 .vscode/

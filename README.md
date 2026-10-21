@@ -4,7 +4,9 @@
 >
 > **Prodigy InfoTech Data Science Internship – Task 02**
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![pandas](https://img.shields.io/badge/pandas-3.0-150458) ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9-F7931E) ![License: MIT](https://img.shields.io/badge/License-MIT-green)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![pandas](https://img.shields.io/badge/pandas-3.0-150458) ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9-F7931E) ![Streamlit](https://img.shields.io/badge/Streamlit-1.66-FF4B4B) ![License: MIT](https://img.shields.io/badge/License-MIT-green)
+
+**🚀 Live app:** [STREAMLIT_APP_URL](STREAMLIT_APP_URL)
 
 <p align="center"><img src="reports/figures/06_sex_class_heatmap.png" width="620" alt="Survival rate by sex and passenger class"></p>
 
@@ -22,6 +24,7 @@ Lifeboat Ledger is a reproducible pipeline (`src/`) plus a storytelling notebook
 4. **Explore** with 17 charts across univariate, bivariate and multivariate views
 5. **Test** the patterns statistically (chi-square, Welch's t, Mann-Whitney U), with p-values explained in plain English
 6. **Validate** with quick baseline models showing that the engineered features carry predictive signal
+7. **Share** everything in an interactive **Streamlit dashboard** with filters, hover tooltips and a "Would you have survived?" predictor
 
 ## 📂 Dataset
 
@@ -119,6 +122,23 @@ Stratified 5-fold cross-validated accuracy on the training set:
 
 The engineered features lift Logistic Regression by ~2.4 points and reduce variance across folds for both models. Note that `IsFemale` and the `Title_*` columns overlap, so read individual LR coefficients as directions rather than exact effect sizes.
 
+## 🖥️ Interactive dashboard
+
+`app.py` is a Streamlit app built on the same `src/` pipeline, so every number matches the notebook.
+
+| Tab | What you can do |
+|---|---|
+| 📊 **Overview** | KPI cards and survival by sex and class; filter by sex, class, port and age in the sidebar |
+| 🔍 **Explore** | Pick any feature to see its survival rate and outcome counts; age histogram; zoomable age-vs-fare scatter with passenger names on hover |
+| 🔥 **Sex × Feature** | Survival heatmap of sex against class, age group, fare band, family group or port |
+| 🧪 **Statistics** | Chi-square, Cramér's V and Mann-Whitney results in plain English |
+| 🤖 **Predict** | Describe a passenger and get the Random Forest's survival estimate, alongside the real survival rate for similar passengers |
+| 🧹 **Data & Cleaning** | The cleaning-decision log, the cleaned data, and a CSV download of the filtered rows |
+
+```bash
+streamlit run app.py
+```
+
 ## 🚀 How to run
 
 ```bash
@@ -138,6 +158,12 @@ python -m src.eda              # → reports/figures/*.png + statistical test CS
 python -m src.model_baseline   # → model results + feature importance
 ```
 
+Launch the dashboard:
+
+```bash
+streamlit run app.py
+```
+
 Or open the notebook, which runs everything in story order:
 
 ```bash
@@ -145,6 +171,13 @@ jupyter notebook notebooks/LifeboatLedger_EDA.ipynb
 ```
 
 > **Optional profiling report:** `ydata-profiling` doesn't support Python 3.14 yet. On Python ≤ 3.13, `pip install ydata-profiling` and the notebook's §7 cell will write `reports/titanic_profile.html`.
+
+### Deploy to Streamlit Community Cloud
+
+1. Push this repo to GitHub.
+2. Go to [share.streamlit.io](https://share.streamlit.io) → **Create app** → choose this repo, branch `main` and main file `app.py`.
+3. Under **Advanced settings**, choose **Python 3.13** or newer (pandas 3 needs Python ≥ 3.11).
+4. Click **Deploy**, then paste the app URL into the "Live app" link at the top of this README.
 
 ## 🗂️ Project structure
 
@@ -158,6 +191,8 @@ LifeboatLedger/
 ├── reports/
 │   ├── figures/              # 17 PNG charts
 │   └── *.csv                 # statistical tests, model results, feature importance
+├── app.py                    # Streamlit dashboard
+├── .streamlit/config.toml    # dashboard theme
 ├── src/
 │   ├── __init__.py           # shared paths
 │   ├── data_loader.py        # loading + inspection
@@ -172,7 +207,7 @@ LifeboatLedger/
 
 ## 🧰 Tech stack
 
-**Python 3.14** · pandas · NumPy · Matplotlib · seaborn · SciPy · scikit-learn · Jupyter
+**Python 3.14** · pandas · NumPy · Matplotlib · seaborn · SciPy · scikit-learn · Streamlit · Altair · Jupyter
 
 ## 👤 Author
 
