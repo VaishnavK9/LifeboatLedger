@@ -1,0 +1,16 @@
+,lr_coefficient,rf_importance
+IsFemale,1.0623,0.2125
+Title_Mr,-0.1592,0.2007
+LogFare,0.2955,0.1022
+Pclass,-0.644,0.0842
+Age,-0.4334,0.0708
+Title_Miss,0.1188,0.0618
+Title_Mrs,0.3879,0.0562
+FamilySize,-0.4018,0.0562
+HasCabin,0.2567,0.0549
+SibSp,-0.469,0.0382
+Parch,-0.1627,0.0167
+Title_Master,0.6155,0.0145
+Embarked_C,0.1208,0.0125
+IsAlone,-0.1042,0.0114
+Embarked_Q,0.0576,0.0074

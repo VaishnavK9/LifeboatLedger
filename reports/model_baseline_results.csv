@@ -1,0 +1,5 @@
+model,features,n_features,cv_accuracy,cv_std
+Logistic Regression,raw,6,0.8058,0.0183
+Random Forest,raw,6,0.8305,0.015
+Logistic Regression,engineered,15,0.8294,0.0099
+Random Forest,engineered,15,0.8328,0.0076
