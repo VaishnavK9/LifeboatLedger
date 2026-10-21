@@ -1,0 +1,16 @@
+# Lifeboat Ledger — pinned dependencies (tested on Python 3.14)
+pandas==3.0.6
+numpy==2.5.4
+matplotlib==3.11.2
+seaborn==0.13.2
+scipy==1.18.1
+scikit-learn==1.9.1
+
+# Notebook tooling
+jupyter==1.1.1
+notebook==7.6.3
+ipykernel==7.4.0
+nbconvert==7.17.2
+
+# Optional: HTML profiling report (requires Python < 3.14)
+# ydata-profiling==4.18.4
