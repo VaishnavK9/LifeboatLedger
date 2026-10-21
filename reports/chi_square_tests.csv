@@ -1,0 +1,11 @@
+feature,chi2,dof,p_value,cramers_v,min_expected,plain_english
+Title,288.12,4,3.957861347159744e-61,0.569,8.8,"Very strong evidence of a real difference in survival across Title (large effect, V = 0.57)."
+Sex,260.72,1,1.1973570627755645e-58,0.541,120.5,"Very strong evidence of a real difference in survival across Sex (large effect, V = 0.54)."
+Pclass,102.89,2,4.549251711298793e-23,0.34,70.6,"Very strong evidence of a real difference in survival across Pclass (medium effect, V = 0.34)."
+Deck,98.78,7,1.922495320821996e-18,0.333,1.5,"Very strong evidence of a real difference in survival across Deck (medium effect, V = 0.33). Caution: some expected counts are below 5, so treat this p-value as approximate."
+HasCabin,87.94,1,6.7419704360811776e-21,0.314,78.3,"Very strong evidence of a real difference in survival across HasCabin (medium effect, V = 0.31)."
+FareBand,80.17,3,2.816616687453629e-17,0.3,85.2,"Very strong evidence of a real difference in survival across FareBand (small effect, V = 0.30)."
+FamilyGroup,74.54,2,6.522919536640473e-17,0.289,23.8,"Very strong evidence of a real difference in survival across FamilyGroup (small effect, V = 0.29)."
+IsAlone,36.0,1,1.9726543846517113e-09,0.201,135.9,"Very strong evidence of a real difference in survival across IsAlone (small effect, V = 0.20)."
+Embarked,25.96,2,2.300862648144953e-06,0.171,29.6,"Very strong evidence of a real difference in survival across Embarked (small effect, V = 0.17)."
+AgeGroup,20.4,4,0.0004171768228036282,0.151,10.0,"Very strong evidence of a real difference in survival across AgeGroup (small effect, V = 0.15)."
